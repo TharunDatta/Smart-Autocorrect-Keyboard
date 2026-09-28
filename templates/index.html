@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171c2c">
+  <title>Typewise | Smart Keyboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="Typewise home"><span class="brand-mark">T<span>.</span></span><span>typewise<small>SMART KEYBOARD</small></span></a>
+      <div class="sidebar-label">EXPLORE</div>
+      <a class="nav-link active" href="#workspace"><span class="nav-icon">✦</span> Editor</a>
+      <a class="nav-link" href="#insights"><span class="nav-icon">◫</span> Model insights</a>
+      <a class="nav-link" href="#how-it-works"><span class="nav-icon">◎</span> How it works</a>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="crumb">Typewise <span>/</span> Smart autocorrect keyboard</div></header>
+      <div class="content">
+        <section class="hero" id="workspace">
+          <div><div class="eyebrow">YOUR WRITING COMPANION <span class="eyebrow-line"></span> VERSION 2.0</div><h1>Write freely.<br><em>We'll catch the rest.</em></h1><p>A smart text editor that catches spelling slips and suggests the next word as you type. Built with a local dictionary and an N-gram language model.</p><div class="hero-chips"><span>✳ Live correction</span><span>↗ Next-word ideas</span><span>◈ No account needed</span></div></div>
+          <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-letter">Aa<span>.</span></div><div class="art-float float-one">hello ✦</div><div class="art-float float-two">the →</div></div>
+        </section>
+        <section class="studio-grid">
+          <div class="editor-card">
+            <div class="card-heading"><div><span class="section-kicker">THE EDITOR</span><h2>Start typing</h2></div><div class="live-label"><span class="status-dot"></span> LIVE</div></div>
+            <div class="editor-wrap"><label class="sr-only" for="textInput">Your writing</label><textarea id="textInput" maxlength="10000" spellcheck="false" placeholder="Try: Teh quick brown fox jumps over teh lazy dog..."></textarea><div class="editor-counter"><span id="wordCount">0 words</span><span class="counter-divider">·</span><span id="charCount">0 characters</span></div></div>
+            <div class="editor-tools"><label class="toggle-row"><input type="checkbox" id="autoToggle" checked><span class="switch"></span><span>Auto-correct as I type</span></label><div class="tool-actions"><button class="text-button" type="button" id="undoButton" disabled>↶ Undo correction</button><button class="text-button" type="button" id="clearButton">Clear</button><button class="primary-button" type="button" id="correctButton">✦ Correct text</button></div></div>
+            <div class="editor-message" id="editorMessage" role="status" aria-live="polite">Type a sentence, then add a space or punctuation to see corrections.</div>
+          </div>
+          <aside class="assist-card"><div class="assist-head"><div><span class="section-kicker">AI ASSIST</span><h2>Next word, ready.</h2></div><span class="assist-spark">✦</span></div><p class="assist-desc">Predictions are drawn from the local project corpus. Tap a suggestion to place it at your cursor.</p><div class="suggestion-label">SUGGESTED NEXT WORDS <span id="suggestionContext">· START TYPING</span></div><div class="suggestions" id="suggestions" aria-live="polite"><div class="empty-suggestions">Your suggestions will appear here once you start writing.</div></div><div class="assist-divider"></div><div class="recent-label">RECENT CORRECTION</div><div class="correction-card" id="correctionCard"><span class="correction-icon">↝</span><span id="correctionText">Nothing to correct yet. Keep writing!</span></div><div class="assist-note">ⓘ Suggestions are statistical guesses, not guaranteed words.</div></aside>
+        </section>
+        <section class="examples"><div><span class="section-kicker">NEED A START?</span><h2>Try a sample</h2></div><div class="example-buttons"><button type="button" data-example="Teh quick brown fox jumps over teh lazy dog.">Fix a typo <span>↗</span></button><button type="button" data-example="I want to learn">Predict next words <span>↗</span></button><button type="button" data-example="Ths project is about machne learning.">Try a sentence <span>↗</span></button></div></section>
+        <section class="insights" id="insights"><div class="section-title"><div><span class="section-kicker">BEHIND THE KEYBOARD</span><h2>Small model. Clear evidence.</h2></div><p>Numbers below come from the included corpus and a held-out sentence check.</p></div><div class="stat-grid"><div class="stat"><span>01 / CORPUS WORDS</span><strong id="statWords">—</strong><small>Training-word occurrences</small></div><div class="stat"><span>02 / UNIQUE WORDS</span><strong id="statUnique">—</strong><small>Distinct vocabulary</small></div><div class="stat"><span>03 / TOP-5 HIT RATE</span><strong id="statTopFive">—</strong><small>Small held-out diagnostic</small></div></div><p class="caveat" id="evaluationNote">This is an educational corpus diagnostic, not a general keyboard benchmark.</p></section>
+        <section class="method" id="how-it-works"><div><span class="section-kicker">HOW IT WORKS</span><h2>A little help at every word.</h2></div><div class="method-grid"><article><span>01</span><h3>Type naturally</h3><p>Write in the editor. A completed word triggers a spelling check when you type a space or punctuation.</p></article><article><span>02</span><h3>Correct with care</h3><p>Dictionary-based correction preserves basic capitalization and punctuation. Undo is always one click away.</p></article><article><span>03</span><h3>Keep your flow</h3><p>Bigram and trigram patterns suggest words based on recent context, with a corpus-frequency fallback.</p></article></div></section>
+        <footer>TYPEWISE · SMART AUTOCORRECT KEYBOARD <span>Built for demonstration, not a system-wide keyboard.</span></footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
